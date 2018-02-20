@@ -851,6 +851,25 @@ credentials.profile = {
 };
 ```
 
+### Microsoft
+
+[Provider Documentation]()
+
+- `scope`: Defaults to `'User.Read', 'offline_access'`
+- `auth`: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+- `token`: https://login.microsoftonline.com/common/oauth2/v2.0/token
+
+The default profile response will look like this:
+
+```javascript
+credentials.profile = {
+    id: profile.id,
+    displayName: profile.displayName,
+    email: profile.mail,
+    raw: profile
+}; 
+```
+
 ## Writing a new provider
 
 When writing a new provider see existing implementations (in `lib/providers`) for reference as well as any documentation provided by your provider. You may want to support `uri` or `extendedProfile` options depending on your needs.
