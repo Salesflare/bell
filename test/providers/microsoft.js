@@ -37,6 +37,8 @@ describe('microsoft', () => {
                 const profile = {
                     id: '1234567890',
                     displayName: 'steve smith',
+                    givenName: 'steve',
+                    surname: 'smith',
                     userPrincipalName: 'steve_smith@domain.onmicrosoft.com'
                 };
 
@@ -84,10 +86,16 @@ describe('microsoft', () => {
                                     id: '1234567890',
                                     displayName: 'steve smith',
                                     email: 'steve_smith@domain.onmicrosoft.com',
+                                    name: {
+                                        first: 'steve',
+                                        last: 'smith'
+                                    },
                                     raw: {
                                         'displayName': 'steve smith',
                                         'id': '1234567890',
                                         'mail': 'steve_smith@domain.onmicrosoft.com',
+                                        'givenName': 'steve',
+                                        'surname': 'smith',
                                         'userPrincipalName': 'steve_smith@domain.onmicrosoft.com'
                                     }
                                 }
@@ -118,7 +126,9 @@ describe('microsoft', () => {
                 const profile = {
                     id: '1234567890',
                     displayName: 'steve smith',
-                    mail: 'steve_smith@domain.onmicrosoft.com'
+                    mail: 'steve_smith@domain.onmicrosoft.com',
+                    givenName: 'steve',
+                    surname: 'smith'
                 };
 
                 Mock.override('https://graph.microsoft.com/v1.0/me/', profile);
@@ -165,10 +175,16 @@ describe('microsoft', () => {
                                     id: '1234567890',
                                     displayName: 'steve smith',
                                     email: 'steve_smith@domain.onmicrosoft.com',
+                                    name: {
+                                        first: 'steve',
+                                        last: 'smith'
+                                    },
                                     raw: {
                                         'displayName': 'steve smith',
                                         'id': '1234567890',
-                                        'mail': 'steve_smith@domain.onmicrosoft.com'
+                                        'mail': 'steve_smith@domain.onmicrosoft.com',
+                                        'givenName': 'steve',
+                                        'surname': 'smith'
                                     }
                                 }
                             });
